@@ -5,7 +5,7 @@
 </h2>
 
 <h2 align="center">
-Сайт був створений по зразку макета ### [Contributions are Welcome](https://www.figma.com/file/zun1oP6NmS2Lmgbcj6e1IG/Test?type=design&node-id=0-1&t=zWXcNQmmGVmIJGeB-0)
+Сайт був створений по зразку макета <a  href="https://www.figma.com/file/zun1oP6NmS2Lmgbcj6e1IG/Test?type=design&node-id=0-1&t=zWXcNQmmGVmIJGeB-0"> Figma Maket</a>
 </h2>
 
 <img src="https://textbook.edu.goit.global/lms-career-homework/uk/img/image-1.jpg">
