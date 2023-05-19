@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, isAnyOf } from '@reduxjs/toolkit';
 import { fetchUser, putUser } from './operations';
 
 const initialState = {
@@ -9,37 +9,52 @@ const initialState = {
   pagination: 2,
 };
 
+const { PENDING, FULFILLED, REJECTED } = {
+  PENDING: 'pending',
+  FULFILLED: 'fulfilled',
+  REJECTED: 'rejected',
+};
+const thunk = [fetchUser, putUser];
+const fn = type => thunk.map(el => el[type]);
+
+const fetchUserPending = state => {
+  state.isLoadingUsers = true;
+};
+
+const handleRej = (state, action) => {
+  state.error = action.payload;
+};
+
+const fetchUserFulfilled = (state, action) => {
+  state.isLoadingUsers = false;
+  state.error = null;
+  state.items = action.payload;
+};
+
+const putUserPending = state => {
+  state.refreshFollow = true;
+};
+
+const putUserFulfilled = (state, action) => {
+  state.refreshFollow = false;
+  state.items = state.items.map(user => {
+    if (user.id === action.payload.id) {
+      return { ...user, ...action.payload };
+    }
+    return user;
+  });
+};
+
 const UsersSlice = createSlice({
   name: 'users',
   initialState,
-
-  extraReducers: {
-    [fetchUser.pending](state) {
-      state.isLoadingUsers = true;
-    },
-    [fetchUser.fulfilled](state, action) {
-      state.isLoadingUsers = false;
-      state.error = null;
-      state.items = action.payload;
-    },
-    [fetchUser.rejected](state, action) {
-      state.error = action.payload;
-    },
-    [putUser.pending](state) {
-      state.refreshFollow = true;
-    },
-    [putUser.fulfilled](state, action) {
-      state.refreshFollow = false;
-      state.items = state.items.map(user => {
-        if (user.id === action.payload.id) {
-          return { ...user, ...action.payload };
-        }
-        return user;
-      });
-    },
-    [putUser.rejected](state, action) {
-      state.error = action.payload;
-    },
+  extraReducers: builder => {
+    builder
+      .addCase(fetchUser.pending, fetchUserPending)
+      .addCase(fetchUser.fulfilled, fetchUserFulfilled)
+      .addCase(putUser.pending, putUserPending)
+      .addCase(putUser.fulfilled, putUserFulfilled)
+      .addMatcher(isAnyOf(...fn(REJECTED)), handleRej);
   },
 });
 
