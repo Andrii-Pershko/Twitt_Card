@@ -1,34 +1,12 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import css from './UserCard.module.css';
-import { putUser } from 'redux/operations';
-import { selectorRefreshTweet, selectorUserItems } from 'redux/selectors';
+import { selectorUserItems } from 'redux/selectors';
 import { Button } from 'components/Button/Button';
 
 export const UserCard = ({ index }) => {
-  const dispatch = useDispatch();
-
-  const isLoadingFollow = useSelector(selectorRefreshTweet);
   const data = useSelector(selectorUserItems);
 
-  const { id, avatar, tweets, followers, follow } = data[index];
-
-  const unsubscribe = () => {
-    const contact = {
-      ...data[index],
-      follow: !follow,
-      followers: followers - 1,
-    };
-    dispatch(putUser(contact));
-  };
-
-  const subscription = () => {
-    const contact = {
-      ...data[index],
-      follow: !follow,
-      followers: followers + 1,
-    };
-    dispatch(putUser(contact));
-  };
+  const { avatar, tweets, followers } = data[index];
 
   const addDot = number => {
     return new Intl.NumberFormat('en-US').format(number);
@@ -59,13 +37,6 @@ export const UserCard = ({ index }) => {
       <p className={css.tweets}>{addDot(tweets)} TWEETS</p>
       <p className={css.followers}>{addDot(followers)} FOLLOWERS</p>
       <Button index={index}></Button>
-      {/* <button
-        id={id - 1}
-        onClick={!follow ? subscription : unsubscribe}
-        className={`${css.button} ${follow && css.subscribeBtn}`}
-      >
-        {isLoadingFollow ? 'loading' : follow ? 'FOLLOWING' : 'FOLLOW'}
-      </button> */}
     </li>
   );
 };

@@ -1,12 +1,11 @@
 import { useDispatch, useSelector } from 'react-redux';
 import css from './Button.module.css';
-import { selectorRefreshTweet, selectorUserItems } from 'redux/selectors';
+import { selectorUserItems } from 'redux/selectors';
 import { putUser } from 'redux/operations';
 
 export const Button = ({ index }) => {
   const dispatch = useDispatch();
 
-  const isLoadingFollow = useSelector(selectorRefreshTweet);
   const data = useSelector(selectorUserItems);
 
   const { followers, follow } = data[index];
