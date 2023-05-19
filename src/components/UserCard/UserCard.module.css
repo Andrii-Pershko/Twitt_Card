@@ -1,0 +1,102 @@
+.cardBox {
+    width: 380px;
+    height: 460px;
+    margin-bottom: 50px;
+    background: linear-gradient(114.99deg, #471CA9 -0.99%, #5736A3 54.28%, #4B2A99 78.99%);
+    box-shadow: -2.5777px 6.87386px 20.6216px rgba(0, 0, 0, 0.23);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.back_img {
+    margin-top: 28px;
+
+    margin-bottom: 18px;
+}
+
+.avatar {
+    display: block;
+    height: 100%
+}
+
+.thumb {
+    border-radius: 50%;
+    overflow: hidden;
+    width: 62px;
+    height: 62px;
+
+}
+
+.moduleBorder {
+    position: relative;
+    padding: 8px;
+    margin-bottom: 26px;
+    border-radius: 50%;
+    margin-top: -44.5px;
+    background: #EBD8FF;
+    box-shadow: 0px 4.391631126403809px 3.2937235832214355px 0px rgba(251, 248, 255, 1) inset;
+    box-shadow: 0px 4.391631126403809px 4.391631126403809px 0px rgba(0, 0, 0, 0.06);
+    box-shadow: 0px -2.1958155632019043px 4.391631126403809px 0px rgba(174, 123, 227, 1) inset;
+
+
+}
+
+
+.linear {
+    width: 100%;
+    height: 8px;
+    background: #EBD8FF;
+    box-shadow: 0px 3.43693px 3.43693px rgba(0, 0, 0, 0.06), inset 0px -1.71846px 3.43693px #AE7BE3, inset 0px 3.43693px 2.5777px #FBF8FF;
+}
+
+.followers {
+    margin-bottom: 26px;
+}
+
+.tweets {
+    margin-bottom: 16px;
+}
+
+.button {
+    width: 196px;
+    height: 50px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    margin-bottom: 36px;
+    font-size: 18px;
+    font-weight: 600;
+    background-color: #EBD8FF;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0px 3.43693px 3.43693px rgba(0, 0, 0, 0.25);
+}
+
+.button:hover {
+    background-color: #dec1fc;
+    box-shadow: 10px 7px 8px 0px rgba(34, 60, 80, 0.65);
+}
+
+.button:active {
+    background-color: #EBD8FF;
+    box-shadow: 10px 7px 8px 0px rgba(34, 60, 80, 0.65);
+}
+
+.subscribeBtn {
+    background-color: #5CD3A8;
+}
+
+.subscribeBtn:hover {
+    background-color: #2bba86;
+    box-shadow: 10px 7px 8px 0px rgba(34, 60, 80, 0.65);
+}
+
+.skeleton {
+    width: 308px;
+    height: 168px;
+    background-color: red;
+    margin-top: 28px;
+    margin-bottom: 18px;
+}

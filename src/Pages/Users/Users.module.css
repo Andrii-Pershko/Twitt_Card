@@ -1,0 +1,45 @@
+.allTwits {
+    width: 196px;
+
+    background-color: #EBD8FF;
+    color: black;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.btnLoadMore {
+    margin-bottom: 20px;
+    margin: 0 auto;
+    display: block;
+    margin-bottom: 20px;
+    width: 196px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    font-size: 18px;
+    font-weight: 600;
+    background-color: #EBD8FF;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0px 3.43693px 3.43693px rgba(0, 0, 0, 0.25);
+}
+
+.btnLoadMore:hover {
+    background-color: #dec1fc;
+    box-shadow: 10px 7px 8px 0px rgba(34, 60, 80, 0.65);
+}
+
+.btnLoadMore:active {
+    background-color: #EBD8FF;
+    box-shadow: 10px 7px 8px 0px rgba(34, 60, 80, 0.65);
+}
+
+.infinity {
+    margin-left: 100px;
+    margin-right: 0 auto;
+}
