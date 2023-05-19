@@ -31,7 +31,7 @@
 
 .btnLoadMore:hover {
     background-color: #dec1fc;
-    box-shadow: 10px 7px 8px 0px rgba(34, 60, 80, 0.65);
+    box-shadow: 1px 7px 8px 0px rgba(34, 60, 80, 0.65);
 }
 
 .btnLoadMore:active {
@@ -40,6 +40,26 @@
 }
 
 .infinity {
-    margin-left: 100px;
-    margin-right: 0 auto;
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btnBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.home {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.home>h1,
+.home>p {
+    margin-bottom: 25px;
+    color: #471CA9;
 }

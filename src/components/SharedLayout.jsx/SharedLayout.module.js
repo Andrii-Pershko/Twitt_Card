@@ -33,8 +33,8 @@ export const Link = styled(NavLink)`
   border-radius: 4px;
   text-decoration: none;
   color: black;
-  font-weight: 500;
-
+  font-size: 22px;
+  font-weigth: 600;
   &.active {
     color: #471ca9;
   }

@@ -1,29 +1,30 @@
 import { useDispatch, useSelector } from 'react-redux';
 import css from './UserCard.module.css';
 import { putUser } from 'redux/operations';
+import { selectorRefreshTweet, selectorUserItems } from 'redux/selectors';
 
 export const UserCard = ({ index }) => {
   const dispatch = useDispatch();
 
-  const isLoadingFollow = useSelector(state => state.users.refreshFollow);
+  const isLoadingFollow = useSelector(selectorRefreshTweet);
+  const data = useSelector(selectorUserItems);
 
-  const data = useSelector(state => state.users.items);
   const { id, avatar, tweets, followers, follow } = data[index];
 
   const unsubscribe = ({ target: { id } }) => {
-    const contact = { ...data[id], follow: !follow, followers: followers - 1 };
+    const contact = { ...data[id], follow: !follow, followers: followers };
     dispatch(putUser(contact));
   };
 
   const subscription = ({ target: { id } }) => {
-    const contact = { ...data[id], follow: !follow, followers: followers + 1 };
+    const contact = { ...data[id], follow: !follow, followers: followers };
     dispatch(putUser(contact));
   };
 
   const addDot = number => {
     return new Intl.NumberFormat('en-US').format(number);
   };
-  
+
   return (
     <li className={css.cardBox}>
       <img
