@@ -38,15 +38,18 @@ export const Users = () => {
     dispatch(addPagination(-pagination + 2));
   };
 
-  console.log('first', users);
+  const toUp = () => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth',
+    });
+  };
 
   useEffect(() => {
     if (users.length === 0) {
-    dispatch(fetchUser());
+      dispatch(fetchUser());
     }
-    return () => {
-      dispatch(addPagination(-pagination + 2));
-    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dispatch]);
 
@@ -107,6 +110,9 @@ export const Users = () => {
           Load more
         </button>
       )}
+      <button onClick={toUp} className={css.btnLoadMore}>
+        To Up
+      </button>
     </>
   );
 };
