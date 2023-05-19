@@ -38,8 +38,12 @@ export const Users = () => {
     dispatch(addPagination(-pagination + 2));
   };
 
+  console.log('first', users);
+
   useEffect(() => {
+    if (users.length === 0) {
     dispatch(fetchUser());
+    }
     return () => {
       dispatch(addPagination(-pagination + 2));
     };

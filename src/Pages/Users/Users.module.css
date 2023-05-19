@@ -63,3 +63,14 @@
     margin-bottom: 25px;
     color: #471CA9;
 }
+
+.boxNotFound>p {
+    color: #471CA9;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.boxNotFound>div {
+    display: flex;
+    justify-content: center;
+}
