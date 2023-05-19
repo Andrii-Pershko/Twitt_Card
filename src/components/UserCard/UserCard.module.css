@@ -59,39 +59,6 @@
     margin-bottom: 16px;
 }
 
-.button {
-    width: 196px;
-    height: 50px;
-    padding-top: 14px;
-    padding-bottom: 14px;
-    margin-bottom: 36px;
-    font-size: 18px;
-    font-weight: 600;
-    background-color: #EBD8FF;
-    border-radius: 10px;
-    border: none;
-    cursor: pointer;
-    box-shadow: 0px 3.43693px 3.43693px rgba(0, 0, 0, 0.25);
-}
-
-.button:hover {
-    background-color: #dec1fc;
-    box-shadow: 10px 7px 8px 0px rgba(34, 60, 80, 0.65);
-}
-
-.button:active {
-    background-color: #EBD8FF;
-    box-shadow: 10px 7px 8px 0px rgba(34, 60, 80, 0.65);
-}
-
-.subscribeBtn {
-    background-color: #5CD3A8;
-}
-
-.subscribeBtn:hover {
-    background-color: #2bba86;
-    box-shadow: 10px 7px 8px 0px rgba(34, 60, 80, 0.65);
-}
 
 .skeleton {
     width: 308px;

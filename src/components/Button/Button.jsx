@@ -1,7 +1,43 @@
+import { useDispatch, useSelector } from 'react-redux';
 import css from './Button.module.css';
+import { selectorRefreshTweet, selectorUserItems } from 'redux/selectors';
+import { putUser } from 'redux/operations';
 
-export const Button = ({ follow }) => {
+export const Button = ({ index }) => {
+  const dispatch = useDispatch();
+
+  const isLoadingFollow = useSelector(selectorRefreshTweet);
+  const data = useSelector(selectorUserItems);
+
+  const { followers, follow } = data[index];
+
+  const unsubscribe = () => {
+    const contact = {
+      ...data[index],
+      follow: !follow,
+      followers: followers - 1,
+    };
+    dispatch(putUser(contact));
+  };
+
+  const subscription = () => {
+    const contact = {
+      ...data[index],
+      follow: !follow,
+      followers: followers + 1,
+    };
+    dispatch(putUser(contact));
+  };
+
   return (
-    <button className={css.button}>{!follow ? 'FOLLOW' : 'FOLLOWING'}</button>
+    <>
+      <button
+        id={index}
+        onClick={!follow ? subscription : unsubscribe}
+        className={`${css.button} ${follow && css.subscribeBtn}`}
+      >
+        {follow ? 'FOLLOWING' : 'FOLLOW'}
+      </button>
+    </>
   );
 };

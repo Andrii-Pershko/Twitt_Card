@@ -1,12 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { initialStateFilter } from './initialState';
 
-// ініцілюємо стартове значення фільтру
-const initialState = 'All';
-
-// створюємо slice для фільтру контактів
 const filterSlice = createSlice({
   name: 'filter',
-  initialState,
+  initialState: initialStateFilter,
   reducers: {
     checkFilter: (state, { payload }) => (state = payload),
   },

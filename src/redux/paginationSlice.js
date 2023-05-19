@@ -1,12 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { initialStatePagination } from './initialState';
 
-// ініцілюємо стартове значення фільтру
-const initialState = 2;
-
-// створюємо slice для фільтру контактів
 const paginationSlice = createSlice({
   name: 'pagination',
-  initialState,
+  initialState: initialStatePagination,
   reducers: {
     addPagination: (state, { payload }) => (state = state + payload),
   },

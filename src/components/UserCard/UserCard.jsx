@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import css from './UserCard.module.css';
 import { putUser } from 'redux/operations';
 import { selectorRefreshTweet, selectorUserItems } from 'redux/selectors';
+import { Button } from 'components/Button/Button';
 
 export const UserCard = ({ index }) => {
   const dispatch = useDispatch();
@@ -57,13 +58,14 @@ export const UserCard = ({ index }) => {
       <div className={css.test}></div>
       <p className={css.tweets}>{addDot(tweets)} TWEETS</p>
       <p className={css.followers}>{addDot(followers)} FOLLOWERS</p>
-      <button
+      <Button index={index}></Button>
+      {/* <button
         id={id - 1}
         onClick={!follow ? subscription : unsubscribe}
         className={`${css.button} ${follow && css.subscribeBtn}`}
       >
         {isLoadingFollow ? 'loading' : follow ? 'FOLLOWING' : 'FOLLOW'}
-      </button>
+      </button> */}
     </li>
   );
 };

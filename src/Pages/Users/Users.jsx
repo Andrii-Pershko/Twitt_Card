@@ -30,6 +30,12 @@ export const Users = () => {
     if (users.length <= pagination) {
       return;
     }
+    setTimeout(() => {
+      window.scrollBy({
+        top: window.innerHeight - 170,
+        behavior: 'smooth',
+      });
+    }, 250);
     dispatch(addPagination(3));
   };
 
