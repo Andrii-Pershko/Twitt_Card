@@ -12,17 +12,18 @@
 
 <h2 align="center">
 В проекті
-використані такі технології: React, Redux Toolkit, axios, Rest API.
+використані такі технології: React, Redux Toolkit, axios, Rest API. Та використовувався в ролі бекенду <a src='mockapi.io'>Mokapi</a>
 </h2>
 
 <p align="center">
-<img src="https://media.tproger.ru/uploads/2016/10/reactmini.png" width="80%"></p>
+<img src="https://media.tproger.ru/uploads/2016/10/reactmini.png" width="60%"></p>
 <p align="center">
-<img src="https://redux-toolkit.js.org/img/redux-logo-landscape.png" width="80%"></p>
+<img src="https://redux-toolkit.js.org/img/redux-logo-landscape.png" width="60%"></p>
 <p align="center">
-<img src="https://res.cloudinary.com/practicaldev/image/fetch/s--oGEXGSkH--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/iu70z7h4vp482ptvsw3d.png" width="80%"></p>
+<img src="https://res.cloudinary.com/practicaldev/image/fetch/s--oGEXGSkH--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/iu70z7h4vp482ptvsw3d.png" width="60%"></p>
 <p align="center">
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzLfEaHVvkEUwRD5QkOqecDdVNrutxM5sVQA&usqp=CAU"" width="80%"></p>
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzLfEaHVvkEUwRD5QkOqecDdVNrutxM5sVQA&usqp=CAU"" width="60%"></p>
 
-пришлось столкнуться, уникальные составляющие проекта); техническое описание
-проекта (установка, настройка, как помочь проекту).
+<h2 align="center">
+Дякую за увагу
+</h2>
