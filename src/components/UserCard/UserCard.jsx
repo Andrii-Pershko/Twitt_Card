@@ -12,12 +12,20 @@ export const UserCard = ({ index }) => {
   const { id, avatar, tweets, followers, follow } = data[index];
 
   const unsubscribe = ({ target: { id } }) => {
-    const contact = { ...data[id], follow: !follow, followers: followers };
+    const contact = {
+      ...data[index],
+      follow: !follow,
+      followers: followers - 1,
+    };
     dispatch(putUser(contact));
   };
 
   const subscription = ({ target: { id } }) => {
-    const contact = { ...data[id], follow: !follow, followers: followers };
+    const contact = {
+      ...data[index],
+      follow: !follow,
+      followers: followers + 1,
+    };
     dispatch(putUser(contact));
   };
 

@@ -40,7 +40,11 @@ export const Users = () => {
 
   useEffect(() => {
     dispatch(fetchUser());
-  }, []);
+    return () => {
+      dispatch(addPagination(-pagination + 2));
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [dispatch]);
 
   if (error) {
     return (
