@@ -6,6 +6,7 @@ export const selectorPagination = state => state.pagination;
 export const selectorError = state => state.users.error;
 export const selectorFilter = state => state.filter;
 export const selectorRefreshTweet = state => state.users.refreshFollow;
+export const selectorFollows = state => state.follows;
 
 export const selectorUserItems = createSelector(
   [selectorUserItemsNoMemo, selectorFilter, selectorPagination],

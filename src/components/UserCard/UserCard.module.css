@@ -2,12 +2,19 @@
     width: 380px;
     height: 460px;
     margin-bottom: 50px;
-    background: linear-gradient(114.99deg, #471CA9 -0.99%, #5736A3 54.28%, #4B2A99 78.99%);
+    padding-top: 178px;
+    background-image: url('../../img/backgtoundImg@1.png'), url('../../img/goitLogo.svg'), linear-gradient(114.99deg, #471CA9 -0.99%, #5736A3 54.28%, #4B2A99 78.99%);
+    background-repeat: no-repeat;
+    background-position: 28px 36px, 20px 20px, 0 0;
     box-shadow: -2.5777px 6.87386px 20.6216px rgba(0, 0, 0, 0.23);
     border-radius: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
+    overflow: hidden;
+    z-index: -2;
+
 }
 
 .back_img {
@@ -34,13 +41,39 @@
     padding: 8px;
     margin-bottom: 26px;
     border-radius: 50%;
-    margin-top: -44.5px;
     background: #EBD8FF;
     box-shadow: 0px 4.391631126403809px 3.2937235832214355px 0px rgba(251, 248, 255, 1) inset;
     box-shadow: 0px 4.391631126403809px 4.391631126403809px 0px rgba(0, 0, 0, 0.06);
     box-shadow: 0px -2.1958155632019043px 4.391631126403809px 0px rgba(174, 123, 227, 1) inset;
 
+}
 
+.moduleBorder::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 153px;
+    height: 8px;
+    background: #EBD8FF;
+    box-shadow: 0px 3.43693px 3.43693px rgba(0, 0, 0, 0.06), inset 0px -1.71846px 3.43693px #AE7BE3, inset 0px 3.43693px 2.5777px #FBF8FF;
+    top: 50%;
+    transform: translate(0, -50%);
+    left: -152px;
+    z-index: -1;
+}
+
+.moduleBorder::before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 153px;
+    height: 8px;
+    background: #EBD8FF;
+    box-shadow: 0px 3.43693px 3.43693px rgba(0, 0, 0, 0.06), inset 0px -1.71846px 3.43693px #AE7BE3, inset 0px 3.43693px 2.5777px #FBF8FF;
+    top: 50%;
+    transform: translate(0, -50%);
+    right: -152px;
+    z-index: -1;
 }
 
 
@@ -66,4 +99,16 @@
     background-color: red;
     margin-top: 28px;
     margin-bottom: 18px;
+}
+
+.logoSchool {
+
+    width: 76px;
+    height: 22px;
+
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    background-image: url('../../img/goitLogo.svg');
+
 }

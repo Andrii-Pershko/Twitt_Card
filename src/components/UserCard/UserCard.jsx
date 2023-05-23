@@ -14,14 +14,6 @@ export const UserCard = ({ index }) => {
 
   return (
     <li className={css.cardBox}>
-      <img
-        className={css.back_img}
-        src={require('../../img/backgtoundImg@1.png')}
-        alt="bg img"
-        width="308"
-        height="168"
-      />
-      <div className={css.linear}></div>
       <div className={css.moduleBorder}>
         <div className={css.thumb}>
           <img

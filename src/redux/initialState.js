@@ -9,3 +9,5 @@ export const initialStateUsers = {
   error: null,
   pagination: 2,
 };
+
+export const followsState = [];

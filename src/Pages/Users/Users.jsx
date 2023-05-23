@@ -16,6 +16,7 @@ import {
   selectorUserItems,
 } from 'redux/selectors';
 import { useNavigate } from 'react-router-dom';
+import { followsAction } from 'redux/followsSlice';
 
 export const Users = () => {
   const dispatch = useDispatch();
@@ -54,10 +55,22 @@ export const Users = () => {
 
   useEffect(() => {
     if (users.length === 0) {
-      dispatch(fetchUser());
+      dispatch(fetchUser()).then(res => {
+        const statusFollow = res.payload.map(() => {
+          return false;
+        });
+        const localData = typeof localStorage.getItem('follows') === 'string';
+
+        if (localData) {
+          const localDataParse = JSON.parse(localStorage.getItem('follows'));
+          dispatch(followsAction(localDataParse));
+        } else {
+          localStorage.setItem('follows', JSON.stringify(statusFollow));
+          dispatch(followsAction(statusFollow));
+        }
+      });
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [dispatch]);
+  }, [dispatch, users.length]);
 
   if (error) {
     return (

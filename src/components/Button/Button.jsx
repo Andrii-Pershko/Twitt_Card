@@ -1,41 +1,63 @@
 import { useDispatch, useSelector } from 'react-redux';
 import css from './Button.module.css';
-import { selectorUserItems } from 'redux/selectors';
+import { selectorFollows, selectorUserItems } from 'redux/selectors';
 import { putUser } from 'redux/operations';
+import { putFollows } from 'redux/followsSlice';
 
 export const Button = ({ index }) => {
   const dispatch = useDispatch();
-
   const data = useSelector(selectorUserItems);
-
-  const { followers, follow } = data[index];
+  const follows = useSelector(selectorFollows);
+  const { followers } = data[index];
 
   const unsubscribe = () => {
     const contact = {
       ...data[index],
-      follow: !follow,
       followers: followers - 1,
     };
     dispatch(putUser(contact));
+
+    const followsPayload = !follows[index];
+    dispatch(putFollows({ index, followsPayload }));
+
+    const followsSlice = follows.map((status, indexArray) => {
+      if (indexArray === index) {
+        return !status;
+      }
+      return status;
+    });
+
+    localStorage.setItem('follows', JSON.stringify(followsSlice));
   };
 
   const subscription = () => {
     const contact = {
       ...data[index],
-      follow: !follow,
       followers: followers + 1,
     };
     dispatch(putUser(contact));
+
+    const followsPayload = !follows[index];
+    dispatch(putFollows({ index, followsPayload }));
+
+    const followsSlice = follows.map((status, indexArray) => {
+      if (indexArray === index) {
+        return !status;
+      }
+      return status;
+    });
+
+    localStorage.setItem('follows', JSON.stringify(followsSlice));
   };
 
   return (
     <>
       <button
         id={index}
-        onClick={!follow ? subscription : unsubscribe}
-        className={`${css.button} ${follow && css.subscribeBtn}`}
+        onClick={!follows[index] ? subscription : unsubscribe}
+        className={`${css.button} ${follows[index] && css.subscribeBtn}`}
       >
-        {follow ? 'FOLLOWING' : 'FOLLOW'}
+        {follows[index] ? 'FOLLOWING' : 'FOLLOW'}
       </button>
     </>
   );
