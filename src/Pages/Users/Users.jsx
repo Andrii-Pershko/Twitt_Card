@@ -70,7 +70,7 @@ export const Users = () => {
         }
       });
     }
-  }, [dispatch]);
+  }, [dispatch, users.length]);
 
   if (error) {
     return (
