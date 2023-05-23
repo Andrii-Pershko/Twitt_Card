@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/Twitt_Card/static/css/main.ff61eaa9.css",
-    "main.js": "/Twitt_Card/static/js/main.e276dded.js",
+    "main.css": "/Twitt_Card/static/css/main.6c2fcfb4.css",
+    "main.js": "/Twitt_Card/static/js/main.c5d56e35.js",
     "static/media/backgtoundImg@1.png": "/Twitt_Card/static/media/backgtoundImg@1.010ab3c33bc13f300d33.png",
     "static/media/goitLogo.svg": "/Twitt_Card/static/media/goitLogo.e917114d7945c04c85a8.svg",
     "index.html": "/Twitt_Card/index.html",
-    "main.ff61eaa9.css.map": "/Twitt_Card/static/css/main.ff61eaa9.css.map",
-    "main.e276dded.js.map": "/Twitt_Card/static/js/main.e276dded.js.map"
+    "main.6c2fcfb4.css.map": "/Twitt_Card/static/css/main.6c2fcfb4.css.map",
+    "main.c5d56e35.js.map": "/Twitt_Card/static/js/main.c5d56e35.js.map"
   },
   "entrypoints": [
-    "static/css/main.ff61eaa9.css",
-    "static/js/main.e276dded.js"
+    "static/css/main.6c2fcfb4.css",
+    "static/js/main.c5d56e35.js"
   ]
 }
