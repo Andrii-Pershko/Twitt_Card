@@ -12,7 +12,7 @@
 
 <h2 align="center">
 В проекті
-використані такі технології: React, Redux Toolkit, axios, Rest API. Та використовувався в ролі бекенду <a href='mockapi.io' target="_blank">Mokapi</a>
+використані такі технології: React, Redux Toolkit, axios, Rest API. Та використовувався в ролі бекенду <a href='https://mockapi.io/' target="_blank">Mokapi</a>
 </h2>
 
 <p align="center">
