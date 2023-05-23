@@ -4,16 +4,19 @@ import { selectorFollows, selectorUserItems } from 'redux/selectors';
 import { putUser } from 'redux/operations';
 import { putFollows } from 'redux/followsSlice';
 
-export const Button = ({ index }) => {
+export const Button = ({ id }) => {
+  const index = id - 1;
   const dispatch = useDispatch();
   const data = useSelector(selectorUserItems);
+
   const follows = useSelector(selectorFollows);
-  const { followers } = data[index];
+
+  const user = data.filter(user => user.id === id)[0];
 
   const unsubscribe = () => {
     const contact = {
-      ...data[index],
-      followers: followers - 1,
+      ...user,
+      followers: user.followers - 1,
     };
     dispatch(putUser(contact));
 
@@ -32,8 +35,8 @@ export const Button = ({ index }) => {
 
   const subscription = () => {
     const contact = {
-      ...data[index],
-      followers: followers + 1,
+      ...user,
+      followers: user.followers + 1,
     };
     dispatch(putUser(contact));
 

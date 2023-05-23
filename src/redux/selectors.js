@@ -9,18 +9,23 @@ export const selectorRefreshTweet = state => state.users.refreshFollow;
 export const selectorFollows = state => state.follows;
 
 export const selectorUserItems = createSelector(
-  [selectorUserItemsNoMemo, selectorFilter, selectorPagination],
-  (users, activeFilter, pagination) => {
+  [
+    selectorUserItemsNoMemo,
+    selectorFilter,
+    selectorPagination,
+    selectorFollows,
+  ],
+  (users, activeFilter, pagination, follow) => {
     if (activeFilter === 'All') {
       return users.filter((_, index) => index <= pagination);
     }
     if (activeFilter === 'Follow') {
       return users
-        .filter(({ follow }) => follow === false)
+        .filter((_, index) => follow[index] === false)
         .filter((_, index) => index <= pagination);
     } else {
       return users
-        .filter(({ follow }) => follow === true)
+        .filter((_, index) => follow[index] === true)
         .filter((_, index) => index <= pagination);
     }
   }

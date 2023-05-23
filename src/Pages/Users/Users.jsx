@@ -70,7 +70,7 @@ export const Users = () => {
         }
       });
     }
-  }, [dispatch, users.length]);
+  }, [dispatch]);
 
   if (error) {
     return (
@@ -117,7 +117,7 @@ export const Users = () => {
 
       <ul>
         {users.map(({ id }, index) => {
-          return <UserCard key={id} index={index} />;
+          return <UserCard key={id} id={id} />;
         })}
       </ul>
       {pagination >= users.length ? (

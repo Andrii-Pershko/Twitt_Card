@@ -3,10 +3,12 @@ import css from './UserCard.module.css';
 import { selectorUserItems } from 'redux/selectors';
 import { Button } from 'components/Button/Button';
 
-export const UserCard = ({ index }) => {
+export const UserCard = ({ id }) => {
   const data = useSelector(selectorUserItems);
 
-  const { avatar, tweets, followers } = data[index];
+  const { avatar, tweets, followers } = data.filter(user => {
+    return user.id === id;
+  })[0];
 
   const addDot = number => {
     return new Intl.NumberFormat('en-US').format(number);
@@ -28,7 +30,7 @@ export const UserCard = ({ index }) => {
       <div className={css.test}></div>
       <p className={css.tweets}>{addDot(tweets)} TWEETS</p>
       <p className={css.followers}>{addDot(followers)} FOLLOWERS</p>
-      <Button index={index}></Button>
+      <Button id={id}></Button>
     </li>
   );
 };
